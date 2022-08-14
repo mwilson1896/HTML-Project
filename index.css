@@ -1,22 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-.background {
-    height: 100%;
-    width: 100%;
+.parallax {
     background-image: url('https://i.pinimg.com/originals/ff/ca/24/ffca24e79820ecf08752c0ab6d02d8a6.gif');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-
+    background-color: rgb(192, 192, 192);
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
+    background-size: cover;
 }
 
-nav li, a {
+li, a {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size:16px;
@@ -24,7 +17,7 @@ nav li, a {
     text-decoration: none;
 }
 
-header {
+header nav {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -48,15 +41,10 @@ header {
     color:rgb(240, 171, 81);
 }
 
-/*.blockquote {
-    max-width: 600px;
-    margin: 10px 30px;
-    padding: 25px;
-    background-color:white;
-    border: 1px solid #3b97ee;
-    color: #000000;
-    box-sizing: border-box;
-}*/
+.title {
+    text-align: center;
+}
+
 
 .blockquote--bordered {
     border-left-width: 10px;
@@ -66,7 +54,7 @@ header {
 .blockquote__text{
     font-family: "Montserrat";
     font-style: italic;
-    font-size: 15px;
+    font-size: 20px;
     line-height: 1.5;
     margin: 0;
 }
@@ -82,16 +70,132 @@ header {
     justify-content: space-evenly;
     grid-template-columns: 600px 600px;
 }
+.example {
+    font-size:25px;
+}
+
+.bio {
+    margin-left: 100px;
+    margin-right: 100px;
+    font-size:40px;
+    text-align: center;
+}
+
+.joy {
+    align-items: center;
+}
+
+.timeline {
+    font-family: "Montserrat", sans-serif;
+    position: relative;
+    margin:50px auto;
+    padding: 40px 0;
+    width: 1000px;
+    box-sizing: border-box;
+}
+
+.timeline:before {
+    content: " ";
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: #fff;
+}
+
+.timeline ul {
+    margin: 0;
+    padding:0;
+}
+
+.timeline ul li {
+    list-style: none;
+    position: relative;
+    width: 50%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+.timeline ul li:nth-child(even){
+    float: right;
+    text-align: left;
+    clear: both;
+}
+.timeline ul li:nth-child(odd){
+    float: left;
+    text-align: right;
+    clear: both;
+}
+
+.content {
+    padding-bottom: 10px;
+}
+
+.timeline ul li:nth-child(odd)::before {
+    content: "";
+    position: absolute;
+    top: 24px;
+    right: -6px;
+    width: 10px;
+    height:10px;
+    background: red;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px pink;
+}
+
+.timeline ul li:nth-child(even)::before {
+    content: "";
+    position: absolute;
+    top: 24px;
+    left: -4px;
+    width: 10px;
+    height:10px;
+    background: red;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px pink;
+}
+
+.timeline ul li h2 {
+    margin: 0;
+    padding:0;
+    font-weight: 600;
+    color: rgb(37, 3, 53);
+}
+
+.timeline ul li p {
+    margin: 10px 0 0;
+    padding:0;
+}
+
+.timeline ul li h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+.timeline ul li:nth-child(odd) .time {
+    position:absolute;
+    top: 12px;
+    right: -165px;
+    margin: 0;
+    padding:8px 16px;
+    background: red;
+    color: #000000;
+    border-radius: 18px;
+    box-shadow: 0 0 0 3px pink;
+}
+.timeline ul li:nth-child(even) .time {
+    position:absolute;
+    top: 12px;
+    left: -165px;
+    margin: 0;
+    padding:8px 16px;
+    background: red;
+    color: #000000;
+    border-radius: 18px;
+    box-shadow: 0 0 0 3px pink;
+}
 
 @media screen and (max-width: 500px) {
-    body {
-        flex-direction: column
-    }
-    nav {
-        flex-direction: row;
-    }
-
-    main {
-        height: 80vh;
-    }
+    
 }
