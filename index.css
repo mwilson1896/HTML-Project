@@ -65,16 +65,19 @@ header nav {
     text-align: right;
 }
 
+.example{
+    font-family: "Montserrat";
+    font-size: 20px;
+}
+
 .grid {
     display: grid;
     justify-content: space-evenly;
     grid-template-columns: 600px 600px;
 }
-.example {
-    font-size:25px;
-}
 
 .bio {
+    font-family: "Montserrat";
     margin-left: 100px;
     margin-right: 100px;
     font-size:40px;
@@ -196,6 +199,31 @@ header nav {
     box-shadow: 0 0 0 3px pink;
 }
 
-@media screen and (max-width: 500px) {
-    
+@media (max-width: 500px){
+    .parallax {
+        background-size: contain;
+        display:inline-flexbox
+    }
+
+    .grid{
+        display: inline-block
+    }
+
+    nav ul li a {
+        color:orange;
+        display: inline-flex;
+        
+    }
+
+    .bio {
+        font-size:20px;
+    }
+
+    .timeline ul li:nth-child(even){
+        float: left;
+        text-align: right;
+        clear: both;
+    }
+
 }
+
